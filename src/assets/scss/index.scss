@@ -4,6 +4,13 @@
 html {
   @include root-font-size();
 }
+
+body {
+	background-color: #F6F7F9;
+}
+* {
+	box-sizing: border-box;
+}
 //@author TalkTao
 
 .flex-shrink-0 {

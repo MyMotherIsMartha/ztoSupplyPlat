@@ -1,3 +1,9 @@
+/*
+ * @Date: 2022-12-12 14:42:02
+ * @LastEditors: ylh
+ * @LastEditTime: 2022-12-25 13:46:30
+ * @FilePath: /ztoSupplyPlat/src/router/index.ts
+ */
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 
 // 通过Vite的import.meta.glob()方法实现自动化导入路由
@@ -7,6 +13,7 @@ const viewRouterModules = import.meta.glob('../views/**/*.vue')
 // 子路由
 const childRoutes = Object.keys(viewRouterModules).map((path)=>{	
 	const childName = path.match(/\.\.\/views\/(.*)\.vue$/)[1].split('/')[1];
+	console.log('childName', childName)
 	return {
 		path: `/${childName.toLowerCase()}`,
 		name: childName,
@@ -26,7 +33,13 @@ const rootRoutes = Object.keys(mainRouterModules).map((path) => {
 			component: mainRouterModules[path],
 			children: childRoutes
 		};
-    }
+    } else {
+			return {
+				path: `/${name.toLowerCase()}`,
+				name,
+				component: mainRouterModules[path]
+			};
+		}
 })
 
 const routes: Array<RouteRecordRaw> = rootRoutes
