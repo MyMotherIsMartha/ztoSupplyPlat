@@ -1,7 +1,7 @@
 <!--
  * @Date: 2022-12-25 18:15:28
  * @LastEditors: ylh
- * @LastEditTime: 2022-12-28 10:38:11
+ * @LastEditTime: 2022-12-30 17:28:27
  * @FilePath: /ztoSupplyPlat/src/views/counterman/counterWallet.vue
 -->
 <script setup lang="ts">
@@ -140,7 +140,7 @@ function goToWithdrawPage() {
   position: relative;
   background: linear-gradient(180deg, #85A3FF 0%, #3693FF 100%);
   .income-wrapper{
-    position: relative;
+    position: absolute;
     top: 90px;
     left: 30px;
     display: flex;
@@ -186,7 +186,7 @@ function goToWithdrawPage() {
   }
   .trend-chart{
     width: 100%;
-    height: 360px;
+    height: 340px;
   }
 
 }

@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-12-12 14:42:02
  * @LastEditors: ylh
- * @LastEditTime: 2022-12-25 13:46:30
+ * @LastEditTime: 2022-12-30 15:30:27
  * @FilePath: /ztoSupplyPlat/src/router/index.ts
  */
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
@@ -29,7 +29,7 @@ const rootRoutes = Object.keys(mainRouterModules).map((path) => {
 		return {
 			path: '/',
 			name,
-			redirect: '/home',
+			redirect: '/login',
 			component: mainRouterModules[path],
 			children: childRoutes
 		};

@@ -1,7 +1,7 @@
 <!--
  * @Date: 2022-12-25 18:15:28
  * @LastEditors: ylh
- * @LastEditTime: 2022-12-29 16:46:47
+ * @LastEditTime: 2022-12-31 10:24:00
  * @FilePath: /ztoSupplyPlat/src/views/customer/customerOrder.vue
 -->
 <script setup lang="ts">
@@ -36,6 +36,12 @@ const themeVars = {
 }
 const router = useRouter()
 
+const goRefundDetail = () => {
+  router.push({
+    name: 'customerRefundDetail'
+  })
+}
+
 onMounted(() => {
 });
 </script>
@@ -69,7 +75,7 @@ onMounted(() => {
         v-for="(item, index) in list"
         :key="index"
       >
-        <div class="top-area">
+        <div class="top-area" @click="goRefundDetail">
           <div class="left-image">
             <img src="@/assets/images/apple-item.png">
           </div>

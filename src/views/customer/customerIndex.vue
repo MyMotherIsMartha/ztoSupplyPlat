@@ -1,7 +1,7 @@
 <!--
  * @Date: 2022-12-25 18:15:28
  * @LastEditors: ylh
- * @LastEditTime: 2022-12-29 15:36:28
+ * @LastEditTime: 2022-12-31 10:28:02
  * @FilePath: /ztoSupplyPlat/src/views/customer/customerIndex.vue
 -->
 <script setup lang="ts">
@@ -32,6 +32,12 @@ const useShowList = () => {
 const { list } = useShowList();
 const router = useRouter()
 
+const goToGoodsDetail = () => {
+  router.push({
+    name: 'customerGoodsDetail'
+  })
+}
+
 onMounted(() => {
 });
 </script>
@@ -54,7 +60,7 @@ onMounted(() => {
         v-for="(item, index) in list"
         :key="index"
       >
-        <div class="top-area">
+        <div class="top-area" @click="goToGoodsDetail">
           <div class="left-image">
             <img src="@/assets/images/apple-item.png">
           </div>

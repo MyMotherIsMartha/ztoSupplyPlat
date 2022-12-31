@@ -1,7 +1,7 @@
 <!--
  * @Date: 2022-12-25 18:15:28
  * @LastEditors: ylh
- * @LastEditTime: 2022-12-29 15:33:58
+ * @LastEditTime: 2022-12-31 10:39:16
  * @FilePath: /ztoSupplyPlat/src/views/customer/customerMine.vue
 -->
 <script setup lang="ts">
@@ -19,18 +19,9 @@ onMounted(() => {
 });
 
 const router = useRouter()
-function goToIncomePage(type: string) {
+function goPage(name: string) {
   router.push({
-    name: 'counterIncome',
-    params: {
-      type
-    }
-  })
-}
-
-function goToWithdrawPage() {
-  router.push({
-    name: 'counterWithdraw'
+      name
   })
 }
 </script>
@@ -55,15 +46,15 @@ function goToWithdrawPage() {
 
     <section class="category-area">
       <div class="category-wrapper">
-        <div class="category-item">
+        <div class="category-item" @click="goPage('customerCart')">
           <van-icon name="shopping-cart" color="#3B95FA" size="26px" class="shopping-icon"/>
           <p>购物车</p>
         </div>
-        <div class="category-item">
+        <div class="category-item" @click="goPage('customerOrder')">
           <img src="@/assets/images/customerMine/goods.png">
           <p>我的订单</p>
         </div>
-        <div class="category-item">
+        <div class="category-item" @click="goPage('customerOrder')">
           <img src="@/assets/images/customerMine/refund.png">
           <p>我的退款</p>
         </div>

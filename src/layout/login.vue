@@ -1,28 +1,38 @@
 <!--
  * @Date: 2022-12-23 16:26:04
  * @LastEditors: ylh
- * @LastEditTime: 2022-12-25 14:24:32
+ * @LastEditTime: 2022-12-30 16:46:43
  * @FilePath: /ztoSupplyPlat/src/layout/login.vue
 -->
 <script setup lang="ts">
 import { computed, onMounted, reactive, ref, toRefs } from "vue";
 import { getTest } from "@/api/home";
+import { useRouter } from 'vue-router'
 import logo from "@/assets/logo.png";
 
 const useShowList = () => {
   const state = reactive({
-    username: '',
-    password: '',
+    username: 'conuter',
+    password: '123',
     isRemember: false
   });
   return toRefs(state);
 };
 const { username, password, isRemember } = useShowList();
+const router = useRouter()
 
 
 const onSubmit = () => {
   console.log(username.value)
-  console.log('submit success')
+  if (username.value === 'conuter') {
+    router.push({
+      name: 'counterOrder'
+    })
+  } else if(username.value === 'customer') {
+    router.push({
+      name: 'customerIndex'
+    })
+  }
 }
 
 onMounted(() => {
